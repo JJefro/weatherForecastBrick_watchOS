@@ -12,13 +12,16 @@ struct ErrorView: View {
     var retryAction: () -> Void
 
     var body: some View {
-        VStack {
-            Text(error.localizedDescription)
-            HStack {
-                Button("Retry") {
-                    retryAction()
+        ScrollView {
+            VStack {
+                Text(error.localizedDescription)
+                HStack {
+                    Button("Retry") {
+                        retryAction()
+                    }
                 }
             }
+            .padding()
         }
     }
 }
