@@ -5,7 +5,7 @@
 //  Created by j.jefrosinins on 10/02/2025.
 //
 
-struct InfoViewFactory {
+struct InfoViewItemsFactory {
     func getInfoViewItems() -> [InfoViewItem] {
         [
             InfoViewItem(text: "info_fog_label"),

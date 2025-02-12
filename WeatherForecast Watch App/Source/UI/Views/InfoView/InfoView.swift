@@ -10,12 +10,16 @@ import SwiftUI
 struct InfoView: View {
     let dataSource: [InfoViewItem]
 
-    init(dataSource: [InfoViewItem] = InfoViewFactory().getInfoViewItems()) {
+    init(dataSource: [InfoViewItem] = InfoViewItemsFactory().getInfoViewItems()) {
         self.dataSource = dataSource
     }
 
     var body: some View {
         ScrollView(.vertical) {
+            Text("info_title")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding()
             ForEach(dataSource.indices, id: \.self) { index in
                 Text(dataSource[index].text)
                     .font(.body)
@@ -25,5 +29,7 @@ struct InfoView: View {
                     .padding()
             }
         }
+        .multilineTextAlignment(.center)
+        .foregroundStyle(.primary)
     }
 }

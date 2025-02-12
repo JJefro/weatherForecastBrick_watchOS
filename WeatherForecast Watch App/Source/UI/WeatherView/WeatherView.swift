@@ -48,7 +48,9 @@ struct WeatherView: View {
         case .loading:
             LoadingView()
         case let .error(error):
-            Text(error.localizedDescription)
+            ErrorView(error: error) {
+                presenter.fetchWeather()
+            }
         case let .content(entity):
             GeometryReader { geometry in
                 ZStack {
